@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNDER CONSTRUCTION </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        .container {
+        max-width: 500px;
+        margin: 20px auto;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+        .containers {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #666;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: calc(100% - 22px);
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 16px;
+            color: #333;
+        }
+
+        textarea {
+            height: 200px;
+            width: 175;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            float: right;
+            font-size: 16px;
+            margin-top: -20px; 
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="containers">
+    <div class="container">
+        <h2>UNDER CONSTRUCTION</h2>
+        
+        <form action="report_handler.php" method="post" id="reportForm">
+            <div class="form-group">
+                <label for="name">NAME:</label>
+                <input type="text" id="name" name="name" required>
+                <div class="error" id="nameError"></div>
+            </div>
+    
+            <div class="form-group">
+                <label for="section">SECTION:</label>
+                <input type="text" id="section" name="section" required>
+                <div class="error" id="emailError"></div>
+            </div>
+    
+            <div class="form-group">
+                <label for="problem">Describe the Problem:</label>
+                <textarea id="problem" name="problem" required></textarea>
+                <div class="error" id="problemError"></div>
+            </div>
+    
+            <input type="submit" value="Submit">
+        </form>
+        <div class="fa-3x">
+
+
+
+</div>
+
+
+<script>
+    document.getElementById("reportForm").addEventListener("submit", function(event) {
+        var name = document.getElementById("name").value.trim();
+        var problem = document.getElementById("problem").value.trim();
+        var nameError = document.getElementById("nameError");
+        var problemError = document.getElementById("problemError");
+        var valid = true;
+
+        if (name === "") {
+            nameError.textContent = "Please enter your name.";
+            valid = false;
+        } else {
+            nameError.textContent = "";
+        }
+
+        if (problem === "") {
+            problemError.textContent = "Please describe the problem.";
+            valid = false;
+        } else {
+            problemError.textContent = "";
+        }
+
+        if (!valid) {
+            event.preventDefault();
+        }
+    });
+
+    function isValidEmail(email) {
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+</script>
+
+</body>
+</html>
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Toggle Button</title>
+    <script>
+        function toggleButton() {
+            var label = document.getElementById("label").value;
+            var button = document.getElementById("button");
+
+            if (label.trim() !== "") {
+                button.style.display = "block";
+            } else {
+                button.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+    <label for="label">Enter Text:</label>
+    <input type="text" id="label" oninput="toggleButton()"><br><br>
+    <button id="button" style="display:none;">Click Me</button>
+</body>
+</html> -->
+
